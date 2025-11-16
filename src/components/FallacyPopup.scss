@@ -1,0 +1,89 @@
+.fallacy-popup {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000;
+  animation: slideDown 0.3s ease-out;
+
+  &__content {
+    background: white;
+    border: 3px solid #ef4444;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    
+    &:hover {
+      color: #ef4444;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ef4444;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__type,
+  &__explanation,
+  &__context {
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    strong {
+      color: #374151;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  &__context {
+    background: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    font-style: italic;
+    color: #6b7280;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
